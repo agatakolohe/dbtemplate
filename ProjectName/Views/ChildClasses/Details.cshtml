@@ -1,0 +1,15 @@
+@{
+    Layout = "_Layout";
+}
+
+@model ToDoList.Models.Item //TODO model directive
+
+<h2>Item Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)<h3>
+
+        <p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.ItemId })</p>
+        <p>@Html.ActionLink("Back to list", "Index")</p>
+
+        @* DisplayNameFor() displays the property name
+            DisplayFor()displays the value of that property *@

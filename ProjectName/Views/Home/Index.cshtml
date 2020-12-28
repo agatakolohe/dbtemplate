@@ -1,0 +1,16 @@
+@{
+    Layout = "_Layout";
+}
+<html>
+
+<body>
+    <h1>Welcome to the To Do List!</h1>
+    @* <h2>@Html.ActionLink("See all categories", "Index", "Categories")</h2> ActionLink() requires two parameters,
+        optional third, "see all items": display text for link, "Index" target action in controller, "Items" the name of the
+        controller of ItemsController to route to that Index()*@
+    <h3>@Html.ActionLink("Seel all items", "Index", "Items")</h3>
+
+
+</body>
+
+</html>

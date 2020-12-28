@@ -1,0 +1,22 @@
+@{
+    Layout = "_Layout";
+}
+
+@using ProjectName.Models; //TODO
+@* @model List<ToDoList.Models.Item>; model directive*@
+
+<h1>Items</h1>
+
+<ul>
+    @foreach (Item item in Model)
+    {
+        <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) | @item.Category.Name</li>
+        @* string interpolation: similar to template literal in JS,C# will evaluate an expression sinde a string *@
+        @* ActionLink will route to a Details action in Controller *@
+        @* new { id = item.ItemId } creates an anonymous object with the property id, this is how.net knows which id to use
+            in the Details action.property names of the object we pass in MUST match paramter names used by the target method
+            (Details() route method) *@
+    }
+</ul>
+
+<p>@Html.ActionLink("Add new item", "Create")</p>

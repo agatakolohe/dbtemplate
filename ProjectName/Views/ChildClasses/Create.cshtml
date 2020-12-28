@@ -1,0 +1,21 @@
+@{
+    Layout = "_Layout";
+}
+
+@* @model ProjectName.Models.ChildClass //TODO model directive tells our view what type of data will be passed into the
+    view from the controller route, provide simple way for our app to reference strongly typed models, must be very specific
+    in defining the type *@
+
+<h4>Add a new task</h4>
+@* @using (Html.BeginForm()) sends HTTP POST request to the current URL *@
+{
+@* @Html.LabelFor(model => model.Description) form field using lambda expression: way to write an anonymous function in
+    a condensed fashion (model => model.<property-name>)*@
+@Html.TextBoxFor(model => model.Description)
+
+@Html.LabelFor(model => model.Category)
+@Html.DropDownList("CategoryId")
+
+<input type="submit" value="Add new task" />
+}
+<p>@Html.ActionLink("Show all items", "Index")</p>
